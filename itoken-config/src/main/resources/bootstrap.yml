@@ -16,12 +16,12 @@ spring:
                 password: zxc961113
                 strict-host-key-checking: false
 server:
-  port: 8088
+  port: 8888
 
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
 
 management:
   endpoint:
