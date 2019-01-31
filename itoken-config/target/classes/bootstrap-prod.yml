@@ -5,22 +5,29 @@ spring:
     admin:
       client:
         url: http://192.168.110.130:8084
+  zipkin:
+    base-url: http://192.168.110.130:9411
   cloud:
-          config:
-            label: master
-            server:
-              git:
-                uri:  http://192.168.110.128:8080/itoken/itoken-config.git
-                search-paths: respo
-                username: admin@example.com
-                password: zxc123123
+    config:
+      server:
+        git:
+          basedir: /usr/local/config
+          force-pull: true
+          search-paths: respo
+          uri: https://github.com/757728531/itoken.git
+          username: 757728531@qq.com
+          password: zxc970121
+          skip-ssl-validation: true
+      label: master
+
+
 server:
   port: 8888
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://192.168.110.130:8761/eureka/
+      defaultZone: http://192.168.110.130:8761/eureka/,http://192.168.110.130:8861/eureka/,http://192.168.110.130:8961/eureka/
 
 management:
   endpoint:
@@ -30,4 +37,3 @@ management:
     web:
       exposure:
         include: health,info
-

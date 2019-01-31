@@ -5,23 +5,29 @@ spring:
     admin:
       client:
         url: http://localhost:8084
+  zipkin:
+    base-url: http://localhost:9411
   cloud:
-          config:
-            label: master
-            server:
-              git:
-                uri: https://github.com/757728531/itoken.git
-                search-paths: respo
-                username: 757728531
-                password: zxc961113
-                strict-host-key-checking: false
+    config:
+      server:
+        git:
+          basedir: d:/myspace/config-center/config
+          force-pull: true
+          search-paths: respo
+          uri: https://github.com/757728531/itoken.git
+          username: 757728531@qq.com
+          password: zxc970121
+          skip-ssl-validation: true
+      label: master
+
+
 server:
   port: 8888
 
-#eureka:
-#  client:
-#    serviceUrl:
-#      defaultZone: http://localhost:8761/eureka/
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
 
 management:
   endpoint:
@@ -31,4 +37,3 @@ management:
     web:
       exposure:
         include: health,info
-

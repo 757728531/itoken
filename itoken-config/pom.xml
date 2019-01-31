@@ -65,7 +65,6 @@
         <!-- Spring Boot Admin End -->
     </dependencies>
 
-
     <build>
         <plugins>
             <plugin>
