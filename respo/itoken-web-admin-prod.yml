@@ -14,3 +14,7 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://192.168.110.130:8761/eureka/,http://192.168.110.130:8861/eureka/,http://192.168.110.130:8961/eureka/
+
+feign:
+  hystrix:
+    enable: true
