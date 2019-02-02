@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: itoken-web-admin
+  thymeleaf:
+    cache: false # 开发时关闭缓存,不然没法看到实时页面
+    mode: LEGACYHTML5 # 用非严格的 HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+server:
+  port: 8601
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.110.130:8761/eureka/,http://192.168.110.130:8861/eureka/,http://192.168.110.130:8961/eureka/
