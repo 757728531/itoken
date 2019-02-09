@@ -1,0 +1,30 @@
+spring:
+
+  boot:
+    admin:
+      client:
+        url: http://192.168.110.130:8084
+  zipkin:
+    base-url: http://192.168.110.130:9411
+
+
+server:
+  port: 8501
+
+mybatis:
+  type-aliases-package: com.funtl.itoken.service.admin.domain
+  mapper-locations: classpath:mapper/*.xml
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://192.168.110.130:8761/eureka/,http://192.168.110.130:8861/eureka/,http://192.168.110.130:8961/eureka/
+
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: health,info
