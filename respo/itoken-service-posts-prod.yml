@@ -1,6 +1,16 @@
 spring:
   application:
     name: itoken-service-posts
+  redis:
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        max-wait: -1ms
+        min-idle: 0
+    sentinel:
+      master: mymaster
+      nodes: 192.168.110.131:26379, 192.168.110.131:26380, 192.168.110.131:26381
   datasource:
     druid:
       url: jdbc:mysql://192.168.110.128:3307/itoken-service-posts?useUnicode=true&characterEncoding=utf-8&useSSL=false
@@ -19,7 +29,8 @@ server:
 mybatis:
   type-aliases-package: com.funtl.itoken.common.domain
   mapper-locations: classpath:mapper/*.xml
-
+  configuration:
+    cache-enabled: true
 eureka:
   client:
     serviceUrl:
